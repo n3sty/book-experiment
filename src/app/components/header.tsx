@@ -5,20 +5,15 @@ import React from "react";
 // page for users that are not logged in yet.
 
 export default function Header() {
-  return (
-    <div className="navbar">
+  const isLoggedIn = false;
+
+  return (<>
+    <div className="navbar bg-base-100 text-base-content">
       <div className="navbar-start" />
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Bookmark &#x1F516;</a>
+        <a className="btn btn-ghost font-black text-2xl">Bookmark &#x1F516;</a>
       </div>
-      <div className="navbar-end gap-2">
-        <div className="form-control">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
-          />
-        </div>
+      <div className="navbar-end">
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -27,19 +22,20 @@ export default function Header() {
           >
             <div className="w-10 rounded-full">
               <img
-                alt="Tailwind CSS Navbar component"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                alt="placeholder"
+                className="rounded-full"
               />
             </div>
           </div>
           <ul
             tabIndex={0}
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
           >
             <li>
               <a className="justify-between">
                 Profile
-                <span className="badge">New</span>
+                <span className="badge badge-ghost">New</span>
               </a>
             </li>
             <li>
@@ -52,5 +48,7 @@ export default function Header() {
         </div>
       </div>
     </div>
+    <div className="bg-base-100 m-0 p-0 divider" />
+    </>
   );
 }

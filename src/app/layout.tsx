@@ -5,7 +5,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 
 const font = Nunito({ subsets: ["latin"] });
-const theme = "light";
+const theme = "dark";
 
 export const metadata: Metadata = {
   title: "Bookmark - Book Tracker",
