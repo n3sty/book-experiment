@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 interface Book {
   id: string;
   title: string;
+  
   pageCount: number;
 }
 
@@ -40,28 +41,33 @@ const BookSearch: React.FC = () => {
     setQuery(book.title);
     alert(`Number of pages: ${book.pageCount}`);
     setShowDropdown(false);
-    query.replace(book.title, "")
+    query.replace(book.title, "");
   };
 
   return (
-    <div className="relative w-80">
+    <div className="relative text-base-content">
       <input
         type="text"
-        className="input input-ghost w-full"
+        className="input input-primary text-base input-lg w-full"
         placeholder="Enter book title"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <div >
+      <div>
         {showDropdown && (
-          <div className="absolute top-full mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+          <div className="stats stats-vertical w-full shadow-lg z-10 bg-primary text-primary-content mx-auto my-2">
             {books.map((book) => (
               <div
                 key={book.id}
-                className="p-2 cursor-pointer hover:bg-gray-200"
                 onClick={() => handleSelectBook(book)}
+                className="stat cursor-pointer hover:bg-gray-200"
               >
-                {book.title}
+                <div className="stat-title text-primary-content">
+                  {book.title}
+                </div>
+                <div className="stat-value">
+
+                </div>
               </div>
             ))}
           </div>
