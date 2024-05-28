@@ -45,17 +45,17 @@ const BookSearch: React.FC = () => {
   };
 
   return (
-    <div className="relative text-base-content">
+    <div className="relative break-words max-w-md md:max-w-xl overflow-x-hidden text-base-content">
       <input
         type="text"
-        className="input input-primary text-base input-lg w-full"
+        className="input input-primary text-base-content w-full"
         placeholder="Enter book title"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <div>
         {showDropdown && (
-          <div className="stats stats-vertical w-full shadow-lg z-10 bg-primary text-primary-content mx-auto my-2">
+          <div className="stats stats-vertical overflow-hidden shadow-lg z-10 bg-primary text-primary-content mx-auto my-2 w-full">
             {books.map((book) => (
               <div
                 key={book.id}
