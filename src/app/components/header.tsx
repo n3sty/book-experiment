@@ -11,7 +11,10 @@ export default function Header() {
     <div className="navbar bg-base-100 text-base-content">
       <div className="navbar-start" />
       <div className="navbar-center">
-        <a className="btn btn-ghost font-black text-2xl">Bookmark &#x1F516;</a>
+        <a 
+        className="btn btn-ghost font-black text-2xl"
+        href="/"
+        >Bookmark &#x1F516;</a>
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">

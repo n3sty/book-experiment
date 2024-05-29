@@ -1,30 +1,6 @@
-"use client";
+import { login, signup } from "@/app/dashboard/actions";
 
-import { useRouter } from "next/navigation";
-
-export default function Dashboard() {
-  const router = useRouter();
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-
-    const response = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (response.ok) {
-      router.push("/profile");
-    } else {
-      alert("Login failed");
-    }
-  }
-
+export default function LoginPage() {
   return (
     <>
       <div className="flex min-h-[80vh] text-base-content bg-base-100">
@@ -45,6 +21,7 @@ export default function Dashboard() {
                   </svg>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     className="grow"
                     placeholder="Email"
@@ -67,20 +44,28 @@ export default function Dashboard() {
                   </svg>
                   <input
                     type="password"
+                    id="password"
                     name="password"
                     className="grow"
                     placeholder="Password"
                     required
                   />
                 </label>
-
-                <button type="submit" className="btn btn-primary hover:font-black hover:text-4xl transition-all hover:btn-secondary w-full">
-                  Submit
-                </button>
+                <div className="flex flex-row w-full">
+                  <button
+                    formAction={login}
+                    className="btn btn-primary hover:font-black mx-auto hover:text-4xl transition-all hover:btn-secondary"
+                  >
+                    Log in
+                  </button>
+                  <button
+                    formAction={signup}
+                    className="btn btn-secondary btn-outline hover:font-black mx-auto hover:text-4xl transition-all hover:btn-primary hover:btn-active"
+                  >
+                    Sign up
+                  </button>
+                </div>
               </form>
-              {/* <button type="submit" onClick={handleSubmit} className="btn btn-primary">
-                Submit
-              </button> */}
             </div>
           </div>
         </div>

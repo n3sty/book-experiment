@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 interface Book {
   id: string;
   title: string;
-  
   pageCount: number;
 }
 
@@ -15,7 +14,7 @@ const BookSearch: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   useEffect(() => {
-    if (query.length > 2) {
+    if (query.length > 3) {
       fetchBooks(query);
     } else {
       setBooks([]);
@@ -48,7 +47,7 @@ const BookSearch: React.FC = () => {
     <div className="relative break-words max-w-md md:max-w-xl overflow-x-hidden text-base-content">
       <input
         type="text"
-        className="input input-primary text-base-content w-full"
+        className="input input-primary text-ellipsis text-base-content w-full"
         placeholder="Enter book title"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -62,7 +61,7 @@ const BookSearch: React.FC = () => {
                 onClick={() => handleSelectBook(book)}
                 className="stat cursor-pointer hover:bg-gray-200"
               >
-                <div className="stat-title text-primary-content">
+                <div className="stat-title text-ellipsis line-clamp-1 text-primary-content">
                   {book.title}
                 </div>
                 <div className="stat-value">
