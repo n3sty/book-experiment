@@ -4,7 +4,7 @@ import BookSearch from "../booksearch";
 const Hero = () => {
   return (
     <div className="flex md:flex-row flex-col text-left max-w-screen-xl">
-      <h1 className="md:text-7xl text-5xl font-black md:pr-8 md:mb-4">
+      <h1 className="md:text-7xl text-5xl font-medium md:pr-8 md:mb-4">
         Get a clear view of your book <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">reading</span> goals
       </h1>
 
