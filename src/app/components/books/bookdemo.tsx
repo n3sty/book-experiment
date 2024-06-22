@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import SearchBar from "./searchbar";
-import BookGrid from "./bookgrid";
+import SearchBar from "@/app/components/books/searchbar";
+import BookGrid from "@/app/components/books/bookgrid";
 
 interface Book {
   id: string;

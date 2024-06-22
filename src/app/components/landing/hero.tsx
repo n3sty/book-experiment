@@ -1,6 +1,6 @@
 import React from "react";
-import BookDemo from "../books/bookdemo";
-import { rate } from "../books/scripts";
+import BookDemo from "@/app/components/books/bookdemo";
+import { rate } from "@/app/components/books/scripts";
 
 const Hero = () => {
   return (
