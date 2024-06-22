@@ -1,5 +1,5 @@
 import React from "react";
-import { Book } from "./BookDemo";
+import { Book } from "./bookdemo";
 import PagesToHours from "./scripts";
 
 const BookGrid = ({

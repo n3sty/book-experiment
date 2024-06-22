@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { type Book } from "./BookDemo";
+import { type Book } from "./bookdemo";
 
 const SearchBar = ({
   setChosenBook,

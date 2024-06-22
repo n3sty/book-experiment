@@ -1,5 +1,5 @@
 import React from "react";
-import BookDemo from "../books/BookDemo";
+import BookDemo from "../books/bookdemo";
 import { rate } from "../books/scripts";
 
 const Hero = () => {
