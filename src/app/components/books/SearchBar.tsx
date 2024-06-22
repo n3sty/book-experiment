@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { type Book } from "./bookdemo";
+import { type Book } from "./BookDemo";
 
 const SearchBar = ({
   setChosenBook,
@@ -43,7 +43,7 @@ const SearchBar = ({
   };
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="grid p-2 my-2 overflow-hidden">
       <input
         type="text"
         className="input input-primary input-lg text-ellipsis w-full"
@@ -53,7 +53,7 @@ const SearchBar = ({
       />
       <div>
         {showDropdown && (
-          <div className="stats stats-vertical overflow-hidden shadow-lg z-10 bg-primary/80 text-primary-content mx-auto my-2 w-full">
+          <div className="stats stats-vertical overflow-hidden shadow-lg z-10 bg-primary/80 text-primary-content w-full">
             {books.map((book) => (
               <div
                 key={book.id}
@@ -61,14 +61,14 @@ const SearchBar = ({
                 className="stat cursor-pointer transition hover:text-secondary-content p-4 text-ellipsis line-clamp-2"
               >
                 {book.authors && (
-                  <div className="stat-title text-ellipsis line-clamp-1 text-primary-content">
+                  <div className="stat-title text-sm text-ellipsis line-clamp-1 text-primary-content">
                     {book.authors.slice(0, 2).join(", ")}
                     {book.authors.length > 2 && (
                       <span> + {book.authors.length - 2}</span>
                     )}
                   </div>
                 )}
-                <div className="stat-value text-ellipsis line-clamp-1 text-xl">
+                <div className="stat-value text-ellipsis line-clamp-1 text-lg">
                   {book.title}
                 </div>
               </div>

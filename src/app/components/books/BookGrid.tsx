@@ -1,5 +1,5 @@
 import React from "react";
-import { Book } from "./bookdemo";
+import { Book } from "./BookDemo";
 import PagesToHours from "./scripts";
 
 const BookGrid = ({
@@ -30,7 +30,7 @@ const BookGrid = ({
           </div>
   
           <div className="grid grid-cols-3">
-            <div className="stats m-2 shadow bg-primary/80 text-primary-content">
+            <div className="stats m-2 shadow bg-primary/80 overflow-hidden text-primary-content">
               {/* Number of pages */}
               <div className="stat p-8">
                 <div className="stat-title text-primary-content">Total Pages</div>
@@ -41,6 +41,7 @@ const BookGrid = ({
             </div>
   
             <div className="stats overflow-hidden m-2 bg-base-200 shadow">
+              {/* Hours to read */}
               <div className="stat p-8">
                 <div className="stat-title text-secondary">Hours to read</div>
                 <div className="stat-value text-secondary">
@@ -49,7 +50,8 @@ const BookGrid = ({
               </div>
             </div>
   
-            <div className="stats m-2 shadow">
+            <div className="stats overflow-hidden m-2 shadow">
+              {/* Another book button */}
               <div
                 className="btn h-full w-full text-2xl"
                 onClick={() => {

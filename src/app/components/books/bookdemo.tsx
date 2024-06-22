@@ -15,14 +15,13 @@ export default function BookDemo() {
   const [chosenBook, setChosenBook] = useState<Book | undefined>(undefined);
 
   return (
-    <div className="grid lg:grid-cols-2 mx-auto">
-      <SearchBar
-        setChosenBook={setChosenBook}
-      />
-      <BookGrid
-        setChosenBook={setChosenBook}
-        chosenBook={chosenBook}
-      />
+    <div className="grid grid-flow-row grid-cols-3 gap-4">
+      <div>
+        <SearchBar setChosenBook={setChosenBook} />
+      </div>
+      <div className="col-span-2">
+        <BookGrid setChosenBook={setChosenBook} chosenBook={chosenBook} />
+      </div>
     </div>
   );
 }
